@@ -1,19 +1,16 @@
-nums = [4,1,2,1,2];
+nums = [2,2,1];
 
 function singleNumber(nums){
-
-if (nums.length===1) {
-    console.log( nums[0]);
+    if (nums.length===1) {
+        console.log( nums[0]);
+    }
+    else { 
+        result = nums[0];   
+        for (var i = 1; i < nums.length; i++){
+            result = result ^ nums[i];
+        }
+        console.log(result);
+    }
 }
 
-else { 
-    let result = 0;
-    
-    nums.forEach(element => {
-        result = result ^ element
-    });
-    //if it is the same number, result will equal zero
-    console.log(result)
-}
-}
 singleNumber(nums)
