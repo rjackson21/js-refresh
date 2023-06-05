@@ -1,12 +1,17 @@
 nums = [-1,-100,3,99]
+//0,1,2,3
 k = 2
+// add k to each index 
+//new indix 
 
 function rotate(nums, k){
-    for (x=1; x<=k; x++) {
-    nums.unshift(nums[nums.length-1])
-    nums.pop()
+    shiftedArray = [];
+    for (x = 0; x < nums.length; x++) {
+        newIndex = (x + k) % nums.length;
+        shiftedArray[newIndex] = nums[x]
     }
     console.log(nums)
+    console.log(shiftedArray)
 }
 
 rotate(nums, k)
