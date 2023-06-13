@@ -1,17 +1,23 @@
-nums = [-1,-100,3,99]
-//0,1,2,3
-k = 2
-// add k to each index 
-//new indix 
+nums = [1,2,3,4,5,6,7]
+k = 3
 
-function rotate(nums, k){
-    shiftedArray = [];
-    for (x = 0; x < nums.length; x++) {
-        newIndex = (x + k) % nums.length;
-        shiftedArray[newIndex] = nums[x]
-    }
-    console.log(nums)
-    console.log(shiftedArray)
+const revNums =  (nums,start,end) => {
+  while (start < end) {
+    [nums[start], nums[end]] =[{nums[end], nums [start]];
+    start++;
+    end--;
+  }
 }
 
-rotate(nums, k)
+  var rotate = function(nums, k) {
+    k = k % nums.length;
+
+    nums.reverse();
+    revNums(nums, 0, k - 1);
+    revNums(nums, k, nums.length - 1);
+
+  }
+    
+
+
+  rotate(nums, k)
